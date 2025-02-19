@@ -50,18 +50,17 @@ q.enqueue(20)
 q.enqueue(30)
 
 print("Front element:", q.front_element())
-print("Queue size:", q.get_size())  # Changed from q.size() to q.get_size()
+print("Queue size:", q.get_size())
 
 q.display()
 
 print("Dequeued:", q.dequeue())
-print("Queue size after dequeue:", q.get_size())  # Changed here as well
-
+print("Queue size after dequeue:", q.get_size())
 q.display()
 
 print("Is queue empty?", q.is_empty())
 
 q.enqueue(40)  
-print("Queue size after attempting to enqueue when full:", q.get_size())  # And here
+print("Queue size after attempting to enqueue when full:", q.get_size())
 
 q.display()
