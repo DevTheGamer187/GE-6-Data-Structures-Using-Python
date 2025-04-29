@@ -47,6 +47,18 @@ class CircularLinkedList:
                 current = current.next
             current.next = self.head
             self.tail = current
+            
+    def searchCircularList(self, key):
+        if self.head is None:
+            return False
+        current = self.head
+        while True:
+            if current.data == key:
+                return True
+            current = current.next
+            if current == self.head:
+                break
+        return False
     
     def printCLL(self):
         if self.head is None:
@@ -78,3 +90,6 @@ if __name__ == "__main__":
     
     cll.deleteAtTail()
     cll.printCLL()  # Output: 3 -> 2 -> 1 -> 5 -> (head)
+    
+    print(cll.searchCircularList(2))  # Output: True
+    print(cll.searchCircularList(7))  # Output: False
