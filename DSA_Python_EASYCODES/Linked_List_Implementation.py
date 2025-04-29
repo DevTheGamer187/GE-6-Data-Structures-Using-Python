@@ -69,6 +69,23 @@ class LinkedList:
             current.next = new_node
             if new_node.next is None:
                 self.tail = new_node
+                
+    def removeAtPosition(self, pos): #O(n)
+        if pos < 0:
+            raise Exception("Invalid position")
+        elif pos == 0:
+            return self.pop_Front()
+        else:
+            current = self.head
+            for _ in range(pos - 1):
+                if current is None or current.next is None:
+                    raise Exception("Position out of bounds")
+                current = current.next
+            removed_element = current.next.element
+            current.next = current.next.next
+            if current.next is None:
+                self.tail = current
+            return removed_element
 
     def searchLinkedList(self, e): #O(n)
         current = self.head
